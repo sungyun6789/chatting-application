@@ -23,14 +23,13 @@ body {
   padding-bottom: 10px;
   border-bottom: 1px solid rgb(79, 98, 148);
 }
-
 .auth-wrapper .form {
   background: #0e101c;
   max-width: 400px;
   margin: 0 auto;
 }
 
-.auth-wrapper p {
+.auth-wrapper .p {
   color: #bf1650;
 }
 
@@ -54,7 +53,7 @@ body {
   line-height: 2;
   text-align: left;
   display: block;
-  margin: 5px;
+  margin: 5px 0;
   font-size: 14px;
   font-weight: 200;
 }
@@ -70,6 +69,22 @@ body {
   font-size: 16px;
   font-weight: 100;
   letter-spacing: 10px;
+}
+
+.message-form-button {
+  background: #7a84eb;
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  margin-top: 40px;
+  padding: 20px;
+  font-size: 16px;
+  font-weight: 100;
+  letter-spacing: 10px;
+}
+
+.message-form-button:hover {
+  background: #636ee6;
 }
 
 .auth-wrapper button[type='submit']:hover,
@@ -111,7 +126,7 @@ body {
   border-radius: 4px;
 }
 
-.auth-wrapper hr {
+hr {
   margin-top: 30px;
 }
 
