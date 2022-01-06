@@ -1,6 +1,6 @@
 import React from 'react';
 import ChatRooms from './ChatRooms';
-import DirectMessage from './DirectMessage';
+import DirectMessages from './DirectMessage';
 import Favorited from './Favorited';
 import UserPanel from './UserPanel';
 
@@ -13,7 +13,7 @@ const SidePanel = () => {
 
       <ChatRooms />
 
-      <DirectMessage />
+      <DirectMessages />
     </div>
   );
 };

@@ -1,10 +1,10 @@
-import firebase from 'firebase';
 import React, { Component } from 'react';
 import { FaRegSmile } from 'react-icons/fa';
+import firebase from '../../../firebase';
 import { connect } from 'react-redux';
 import { setCurrentChatRoom, setPrivateChatRoom } from '../../../redux/actions/chatRoom_action';
 
-export class DirectMessage extends Component {
+export class DirectMessages extends Component {
   state = {
     usersRef: firebase.database().ref('users'),
     users: [],
@@ -13,15 +13,15 @@ export class DirectMessage extends Component {
 
   componentDidMount() {
     if (this.props.user) {
-      this.addUserListeners(this.props.user.uid);
+      this.addUsersListeners(this.props.user.uid);
     }
   }
 
-  addUserListeners = (userCurrentId) => {
+  addUsersListeners = (currentUserId) => {
     const { usersRef } = this.state;
     let usersArray = [];
     usersRef.on('child_added', (DataSnapshot) => {
-      if (userCurrentId !== DataSnapshot.key) {
+      if (currentUserId !== DataSnapshot.key) {
         let user = DataSnapshot.val();
         user['uid'] = DataSnapshot.key;
         user['status'] = 'offline';
@@ -87,4 +87,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(DirectMessage);
+export default connect(mapStateToProps)(DirectMessages);

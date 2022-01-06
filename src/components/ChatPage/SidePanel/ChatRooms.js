@@ -119,7 +119,7 @@ export class ChatRooms extends Component {
       description: description,
       createdBy: {
         name: user.displayName,
-        image: user.photoURL,
+        // image: user.photoURL,
       },
     };
 
